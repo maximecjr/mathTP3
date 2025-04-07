@@ -1,0 +1,46 @@
+﻿  main.cpp
+  ofApp.cpp
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(326,20): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\main.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(331,20): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\main.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(912,11): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\main.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(913,11): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\main.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(914,11): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\main.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(915,11): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\main.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(326,20): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\ofApp.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(331,20): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\ofApp.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(912,11): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\ofApp.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(913,11): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\ofApp.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(914,11): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\ofApp.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(915,11): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\ofApp.cpp)
+  Particle.cpp
+  Ray.cpp
+  Wall.cpp
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(326,20): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\raycasting\Wall.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(331,20): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\raycasting\Wall.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(912,11): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\raycasting\Wall.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(913,11): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\raycasting\Wall.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(914,11): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\raycasting\Wall.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(915,11): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\raycasting\Wall.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(326,20): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\raycasting\Particle.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(331,20): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\raycasting\Particle.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(326,20): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\raycasting\Ray.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(331,20): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\raycasting\Ray.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(912,11): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\raycasting\Particle.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(913,11): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\raycasting\Particle.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(914,11): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\raycasting\Particle.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(915,11): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\raycasting\Particle.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(912,11): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\raycasting\Ray.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(913,11): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\raycasting\Ray.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(914,11): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\raycasting\Ray.cpp)
+C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\openFrameworks\math\ofMatrix4x4.h(915,11): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données (compilation du fichier source src\raycasting\Ray.cpp)
+LINK : warning LNK4075: ' /INCREMENTAL' ignoré à cause de la spécification '/FORCE'
+  emptyExample.vcxproj -> C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\apps\myApps\RayTemplate\bin\emptyExample_debug.exe
+  
+  	                   2	C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\fmod\lib\vs\x64\
+  	  Nouveau fichier		 1826304	C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\fmod\lib\vs\x64\fmod.dll
+  	  Nouveau fichier		 2041856	C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\fmod\lib\vs\x64\fmodL.dll
+  
+  	                   1	C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\FreeImage\lib\vs\x64\
+  	  *Fichier SUPPL.		 1826304	C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\apps\myApps\RayTemplate\bin\fmod.dll
+  	  *Fichier SUPPL.		 2041856	C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\apps\myApps\RayTemplate\bin\fmodL.dll
+  	  Nouveau fichier		 6942208	C:\Users\dimtest\Downloads\of_v0.12.0_vs_release\of_v0.12.0_vs_release\libs\FreeImage\lib\vs\x64\FreeImage.dll
