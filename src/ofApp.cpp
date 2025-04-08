@@ -22,7 +22,7 @@ void ofApp::update()
 //--------------------------------------------------------------
 void ofApp::draw()
 {
-    particle.show();
+    particle.show(walls);
     for (int i = 0; i < walls.size(); i++)
     {
         walls.at(i).show();

@@ -15,5 +15,5 @@ private:
 
 public:
     void update(float x, float y);
-    void show();
+    void show(std::vector<Wall> &walls);
 };

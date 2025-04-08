@@ -21,13 +21,13 @@ void Particle::update(float x, float y)
     this->pos.set(x, y);
 }
 
-void Particle::show()
+void Particle::show(std::vector<Wall> &walls)
 {
     ofDrawCircle(this->pos, 5);
 
     for (auto &ray : rays)
     {
         ray.origin = this->pos;
-        ray.draw();
+        ray.cast(walls);
     }
 }
