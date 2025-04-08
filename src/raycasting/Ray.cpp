@@ -1,6 +1,7 @@
 #include "Ray.h"
 
 // Initialize the Ray with an origin and direction
+//gére les rayons qui representeront la vision des personnages
 Ray::Ray(const ofVec3f &origin, const ofVec3f &direction)
 {
     this->origin = origin;

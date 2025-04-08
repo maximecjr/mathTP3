@@ -1,5 +1,5 @@
 #include "Wall.h"
-
+//gere les murs qui obstrueront la vision du personnage
 Wall::Wall(const ofVec3f &pos1, const ofVec3f &pos2)
 {
     this->pos1 = pos1;

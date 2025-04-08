@@ -1,6 +1,6 @@
 
 #include "Particle.h"
-
+//dessine le personnage et les rayons qui represente sa vision.
 Particle::Particle(ofVec2f pos)
 {
     this->pos = pos;
