@@ -21,7 +21,7 @@ void Ray::draw()
 {
     ofDrawLine(this->origin, this->origin + this->direction * 1000);
 }
-
+//reprends le principe du draw mais y ajoute le test d'intersection afin de s'arreter en cas de collision
 void Ray::cast(std::vector<Wall> &walls)
 {
     ofVec3f closestPoint;
@@ -30,19 +30,19 @@ void Ray::cast(std::vector<Wall> &walls)
 
     for (auto &wall : walls)
     {
-        // Paramétrisation du segment (mur)
+        // point de depart et d'arriver du mur
         ofVec3f a = wall.pos1;
         ofVec3f b = wall.pos2;
 
         // Vecteurs utiles
         ofVec3f wallDir = b - a;
         ofVec3f rayToWall = a - origin;
-
+        
         float det = direction.x * (-wallDir.y) + direction.y * wallDir.x;
 
         // Si le déterminant est proche de 0, les droites sont parallèles
         if (abs(det) < 1e-6)
-            continue;
+            continue; //si le rayon est parallele au mur alors on passe au mur suivant
 
         // Calcul de t (paramètre du rayon) et u (paramètre du segment)
         float t = (rayToWall.x * (-wallDir.y) + rayToWall.y * wallDir.x) / det;
