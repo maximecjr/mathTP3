@@ -4,8 +4,9 @@
 void ofApp::setup()
 {
     ofBackground(0); // Fond noir
+    //crée le personnage
     particle = Particle(ofVec2f(100, 100));
-    
+    //crée les murs de maniére aléatoire
     for (int i = 0; i < 20; i++) {
         ofVec3f start(ofRandom(0, 1024), ofRandom(0, 768), 100);
         ofVec3f end = start + ofVec3f(ofRandom(-100, 250), ofRandom(-100, 250), 0);
@@ -14,6 +15,7 @@ void ofApp::setup()
 }
 
 //--------------------------------------------------------------
+//gere le deplacement du personnage (souris)
 void ofApp::update()
 {
     particle.update(ofGetMouseX(), ofGetMouseY());
@@ -22,6 +24,7 @@ void ofApp::update()
 //--------------------------------------------------------------
 void ofApp::draw()
 {
+    //appel la fonction pour dessiner les rayons et les murs.
     particle.show(walls);
     for (int i = 0; i < walls.size(); i++)
     {
@@ -29,6 +32,9 @@ void ofApp::draw()
     }
     
 }
+
+
+//FONCTION EXEMPLE INUTILISE DANS NOTRE PROJET
 
 //--------------------------------------------------------------
 void ofApp::exit()

@@ -24,7 +24,7 @@ void Particle::update(float x, float y)
 void Particle::show(std::vector<Wall> &walls)
 {
     ofDrawCircle(this->pos, 5);
-
+    //dessine tout les rayons en prenant en compte les intersections grace au cast
     for (auto &ray : rays)
     {
         ray.origin = this->pos;
