@@ -14,6 +14,9 @@ void ofApp::setup()
     }
 }
 
+
+    bool reflectRays = false;  // Variable pour gérer l'état de réflexion des rayons
+
 //--------------------------------------------------------------
 //gere le deplacement du personnage (souris)
 void ofApp::update()
@@ -30,7 +33,17 @@ void ofApp::draw()
     {
         walls.at(i).show();
     }
-    
+    // Afficher le texte "Press E to reflect rays" en rouge
+    if (!reflectRays) {
+        ofDrawBitmapString("Press E to reflect rays", 20, 20);
+    } else {
+        ofDrawBitmapString("Reflection enabled", 20, 20);  // Afficher un autre texte quand la réflexion est activée
+    }
+
+    for (auto &ray : particle.rays)
+    {
+        ray.cast(walls, reflectRays);  
+    }
 }
 
 
@@ -44,6 +57,10 @@ void ofApp::exit()
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key)
 {
+    if (key == 'e' || key == 'E')  // Si la touche E est pressée
+    {
+        reflectRays = !reflectRays;  // Alterne l'état (réfléchir ou non)
+    }
 }
 
 //--------------------------------------------------------------

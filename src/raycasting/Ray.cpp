@@ -1,5 +1,5 @@
 #include "Ray.h"
-
+#include "ofApp.h"
 // Initialize the Ray with an origin and direction
 //gére les rayons qui representeront la vision des personnages
 Ray::Ray(const ofVec3f &origin, const ofVec3f &direction)
@@ -22,55 +22,70 @@ void Ray::draw()
     ofDrawLine(this->origin, this->origin + this->direction * 1000);
 }
 //reprends le principe du draw mais y ajoute le test d'intersection afin de s'arreter en cas de collision
-void Ray::cast(std::vector<Wall> &walls)
+void Ray::cast(std::vector<Wall> &walls, bool reflectRays)
 {
+    float closestDist = std::numeric_limits<float>::max();
     ofVec3f closestPoint;
-    float minDist = std::numeric_limits<float>::infinity();
-    bool foundIntersection = false;
+    bool hitWall = false;
+    ofVec3f reflectionDir;
 
     for (auto &wall : walls)
     {
-        // point de depart et d'arriver du mur
-        ofVec3f a = wall.pos1;
-        ofVec3f b = wall.pos2;
+        ofVec3f p1 = wall.pos1;
+        ofVec3f p2 = wall.pos2;
+        ofVec3f dir = this->direction;
+        ofVec3f orig = this->origin;
 
-        // Vecteurs utiles
-        ofVec3f wallDir = b - a;
-        ofVec3f rayToWall = a - origin;
-        
-        float det = direction.x * (-wallDir.y) + direction.y * wallDir.x;
+        ofVec3f wallDir = p2 - p1;
+        ofVec3f diff = p1 - orig;
 
-        // Si le déterminant est proche de 0, les droites sont parallèles
-        if (abs(det) < 1e-6)
-            continue; //si le rayon est parallele au mur alors on passe au mur suivant
+        float denom = dir.x * wallDir.y - dir.y * wallDir.x;
 
-        // Calcul de t (paramètre du rayon) et u (paramètre du segment)
-        float t = (rayToWall.x * (-wallDir.y) + rayToWall.y * wallDir.x) / det;
-        float u = (direction.x * rayToWall.y - direction.y * rayToWall.x) / det;
+        // Check if lines are parallel (no intersection)
+        if (abs(denom) < 1e-6)
+            continue;
 
-        // Test si l'intersection est sur le segment et devant le rayon
+        float t = (diff.x * wallDir.y - diff.y * wallDir.x) / denom;
+        float u = (diff.x * dir.y - diff.y * dir.x) / denom;
+
         if (t > 0 && u >= 0 && u <= 1)
         {
-            ofVec3f intersection = origin + direction * t;
-            float dist = (intersection - origin).length();
-            if (dist < minDist)
+            // Compute the intersection point
+            ofVec3f pt = orig + dir * t;
+            float dist = (pt - orig).length();
+
+            // If the intersection is closer, update the closest intersection
+            if (dist < closestDist)
             {
-                minDist = dist;
-                closestPoint = intersection;
-                foundIntersection = true;
+                closestDist = dist;
+                closestPoint = pt;
+                hitWall = true;
+
+                // Calculate the normal of the wall at the intersection
+                ofVec3f normal = ofVec3f(-wallDir.y, wallDir.x, 0);  // Normal perpendiculaire au mur
+                normal.normalize();  // Normalise la normale
+
+                if (reflectRays) { // Si les rayons doivent se réfléchir
+                    // Reflect the direction vector using the reflection formula
+                    reflectionDir = dir - 2 * (dir.dot(normal)) * normal;
+                }
             }
         }
     }
 
-    if (foundIntersection)
+    if (hitWall)
     {
-        // Affiche le rayon jusqu’au point d’intersection
+        // Draw the ray until the intersection point
         ofDrawLine(origin, closestPoint);
+
+        if (reflectRays) {
+            // Draw the reflected ray
+            ofDrawLine(closestPoint, closestPoint + reflectionDir * 1000);  // Longueur arbitraire pour le rayon réfléchi
+        }
     }
     else
     {
-        // Aucun mur touché, le rayon va loin
+        // No intersection: draw the ray long
         ofDrawLine(origin, origin + direction * 1000);
     }
 }
-

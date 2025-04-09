@@ -25,9 +25,10 @@ public:
 	void windowResized(int w, int h) override;
 	void dragEvent(ofDragInfo dragInfo) override;
 	void gotMessage(ofMessage msg) override;
+	bool reflectRays = false; // Contrôle si les rayons sont réfléchis ou non
 
 private:
 	Particle particle;
 	std::vector<Wall> walls;
-	
+	ofTrueTypeFont font;    
 };
