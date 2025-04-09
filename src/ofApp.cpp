@@ -72,8 +72,6 @@ void ofApp::draw()
 }
 
 
-//FONCTION EXEMPLE INUTILISE DANS NOTRE PROJET
-
 //--------------------------------------------------------------
 void ofApp::exit()
 {
