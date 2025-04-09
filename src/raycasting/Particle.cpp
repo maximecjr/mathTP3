@@ -28,6 +28,5 @@ void Particle::show(std::vector<Wall> &walls)
     for (auto &ray : rays)
     {
         ray.origin = this->pos;
-        ray.cast(walls);
     }
 }

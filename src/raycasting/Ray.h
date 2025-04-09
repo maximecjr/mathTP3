@@ -13,7 +13,7 @@ public:
 
     bool intersectPlane(ofVec3f &planeNormal, float d);
 
-    void cast(std::vector<Wall> &walls);
+    void cast(std::vector<Wall> &walls, bool reflectRays); // Ajout du paramètre reflectRays
 
     // For visual debugging
     void draw();
