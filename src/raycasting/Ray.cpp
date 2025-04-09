@@ -40,33 +40,26 @@ void Ray::cast(std::vector<Wall> &walls, bool reflectRays)
         ofVec3f diff = p1 - orig;
 
         float denom = dir.x * wallDir.y - dir.y * wallDir.x;
-
-        // Check if lines are parallel (no intersection)
-        if (abs(denom) < 1e-6)
-            continue;
+        if (abs(denom) < 1e-6) continue;
 
         float t = (diff.x * wallDir.y - diff.y * wallDir.x) / denom;
         float u = (diff.x * dir.y - diff.y * dir.x) / denom;
 
         if (t > 0 && u >= 0 && u <= 1)
         {
-            // Compute the intersection point
             ofVec3f pt = orig + dir * t;
             float dist = (pt - orig).length();
 
-            // If the intersection is closer, update the closest intersection
             if (dist < closestDist)
             {
                 closestDist = dist;
                 closestPoint = pt;
                 hitWall = true;
 
-                // Calculate the normal of the wall at the intersection
-                ofVec3f normal = ofVec3f(-wallDir.y, wallDir.x, 0);  // Normal perpendiculaire au mur
-                normal.normalize();  // Normalise la normale
+                ofVec3f normal = ofVec3f(-wallDir.y, wallDir.x, 0);
+                normal.normalize();
 
-                if (reflectRays) { // Si les rayons doivent se réfléchir
-                    // Reflect the direction vector using the reflection formula
+                if (reflectRays) {
                     reflectionDir = dir - 2 * (dir.dot(normal)) * normal;
                 }
             }
@@ -75,17 +68,57 @@ void Ray::cast(std::vector<Wall> &walls, bool reflectRays)
 
     if (hitWall)
     {
-        // Draw the ray until the intersection point
         ofDrawLine(origin, closestPoint);
 
-        if (reflectRays) {
-            // Draw the reflected ray
-            ofDrawLine(closestPoint, closestPoint + reflectionDir * 1000);  // Longueur arbitraire pour le rayon réfléchi
+        if (reflectRays)
+        {
+            // Lancer un rayon réfléchi à partir de closestPoint
+            float reflectedClosestDist = std::numeric_limits<float>::max();
+            ofVec3f reflectedHitPoint;
+            bool reflectedHit = false;
+
+            for (auto &wall : walls)
+            {
+                ofVec3f p1 = wall.pos1;
+                ofVec3f p2 = wall.pos2;
+                ofVec3f dir = reflectionDir;
+                ofVec3f orig = closestPoint;
+
+                ofVec3f wallDir = p2 - p1;
+                ofVec3f diff = p1 - orig;
+
+                float denom = dir.x * wallDir.y - dir.y * wallDir.x;
+                if (abs(denom) < 1e-6) continue;
+
+                float t = (diff.x * wallDir.y - diff.y * wallDir.x) / denom;
+                float u = (diff.x * dir.y - diff.y * dir.x) / denom;
+
+                if (t > 0.001 && u >= 0 && u <= 1)  // t > 0.001 pour éviter collision immédiate avec le mur d’origine
+                {
+                    ofVec3f pt = orig + dir * t;
+                    float dist = (pt - orig).length();
+
+                    if (dist < reflectedClosestDist)
+                    {
+                        reflectedClosestDist = dist;
+                        reflectedHitPoint = pt;
+                        reflectedHit = true;
+                    }
+                }
+            }
+
+            if (reflectedHit)
+            {
+                ofDrawLine(closestPoint, reflectedHitPoint);
+            }
+            else
+            {
+                ofDrawLine(closestPoint, closestPoint + reflectionDir * 1000);
+            }
         }
     }
     else
     {
-        // No intersection: draw the ray long
         ofDrawLine(origin, origin + direction * 1000);
     }
 }
