@@ -8,7 +8,7 @@ class Particle
 public:
     Particle(ofVec2f pos = ofVec2f(100, 100));
 
-private:
+public:
     ofVec2f pos;
 
     std::vector<Ray> rays;

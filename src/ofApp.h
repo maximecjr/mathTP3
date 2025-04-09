@@ -3,7 +3,6 @@
 #include "ofMain.h"
 #include "raycasting/Particle.h"
 #include "raycasting/Wall.h"
-
 class ofApp : public ofBaseApp
 {
 

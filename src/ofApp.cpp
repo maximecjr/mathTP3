@@ -1,8 +1,33 @@
 #include "ofApp.h"
+#include <iostream>
+void runTests() {
+    std::cout << "== DEBUT DES TESTS ==" << std::endl;
 
+    // Test 1 : Création d'un mur
+    Wall w(ofVec3f(0, 0, 0), ofVec3f(100, 100, 0));
+    std::cout << "Mur cree de (0,0) a (100,100)." << std::endl;
+
+    // Test 2 : Création d'une particule
+    Particle p(ofVec2f(50, 50));
+    std::cout << "Particule creee a (50,50)." << std::endl;
+
+    // Test 3 : Déplacement de la particule
+    p.update(200, 200);
+    std::cout << "Particule deplacee a (200,200)." << std::endl;
+
+    // Test 4 : Nombre de rayons (facultatif, selon ton implémentation)
+    if (p.rays.size() > 0) {
+        std::cout << "OK : " << p.rays.size() << " rayons generes." << std::endl;
+    } else {
+        std::cout << "ERREUR : Aucun rayon genere." << std::endl;
+    }
+    std::cout << "== FIN DES TESTS ==" << std::endl;
+
+}
 //--------------------------------------------------------------
 void ofApp::setup()
 {
+    runTests();
     ofBackground(0); // Fond noir
     //crée le personnage
     particle = Particle(ofVec2f(100, 100));
